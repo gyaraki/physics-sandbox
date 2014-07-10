@@ -1,6 +1,25 @@
 $('#set_variables_form').submit(function (e) {
   e.preventDefault();
-  console.log($('#mass1').val());
+  updateSetting();
+});
+
+$('#set_variables_form #mass1').change(function(e) {
+  updateSetting();
+});
+
+$('#set_variables_form #mass2').change(function(e) {
+  updateSetting();
+});
+
+$('#set_variables_form #Phi1').change(function(e) {
+  updateSetting();
+});
+
+$('#set_variables_form #Phi2').change(function(e) {
+  updateSetting();
+});
+
+function updateSetting () {
   m1     = $('#mass1').val();
   m2     = $('#mass2').val();
   Phi1   = $('#Phi1').val()/180*(Math.PI);
@@ -10,7 +29,7 @@ $('#set_variables_form').submit(function (e) {
   dPhi1  = 0;
   dPhi2  = 0;
   run();
-});
+}
 
 function drawCircle(myCircle, context) {
   context.beginPath();
